@@ -7,10 +7,11 @@ const sectionIds = [...sections].map(({ id }) => id);
 const contactModal = document.getElementById("contact-modal");
 const contactForm = contactModal.querySelector("#contact-form");
 const fcAlert = document.getElementById("fc-alert");
+const fcAlertMessage = fcAlert.children[0].children[1];
 
 function showAlert(message) {
   const formattedMessage = message.trim().replace(/\n/g, "<br/>");
-  fcAlert.children[0].children[1].innerHTML = formattedMessage;
+  fcAlertMessage.innerHTML = formattedMessage;
   fcAlert.classList.add("visible");
 }
 
@@ -44,7 +45,7 @@ function submitContact() {
     showAlert(`
       You've made an outstanding choice, <strong>${name}</strong>!
       
-      We will keep in through the given channels.
+      We'll keep in touch through the given channels.
       
       Email: <strong>${email}</strong>
       Phone: <strong>${phone}</strong>
