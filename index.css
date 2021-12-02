@@ -1,0 +1,71 @@
+@import "https://dds.dell.com/components/2.0.7/css/dds-reboot.min.css";
+@import "https://dds.dell.com/components/2.0.7/css/dds-fonts.min.css";
+@import "https://dds.dell.com/components/2.0.7/css/dds-icons.min.css";
+@import "https://dds.dell.com/components/2.0.7/css/dds-helpers.min.css";
+@import "https://dds.dell.com/components/2.0.7/css/dds-main.min.css";
+
+html,
+body {
+  min-height: 100vh;
+}
+
+.template {
+  display: flex;
+  height: 100%;
+}
+
+main {
+  flex: 1;
+  background: none;
+}
+
+a {
+  font-size: inherit;
+}
+
+a > i {
+  display: inline-block;
+  font-size: 0.75em;
+  margin-left: 0.25em;
+}
+
+.ornament {
+  align-items: center;
+  border-radius: 24px;
+  color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  font-size: 1.25em;
+  height: 48px;
+  justify-content: center;
+  margin-bottom: 2em;
+  width: 48px;
+}
+
+strong {
+  font-weight: 500;
+}
+
+.ornament.blue {
+  background-color: #d9f5fd;
+}
+
+.ornament.red {
+  background-color: #ffecee;
+}
+
+.ornament.green {
+  background-color: #e9f5ce;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 1086px;
+  width: 100%;
+  margin: 56px auto 0px;
+}
+
+.dds__side-nav a,
+.dds__side-nav button {
+  cursor: pointer;
+}

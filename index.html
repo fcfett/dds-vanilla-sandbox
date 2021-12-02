@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dell - Design Language System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="template">
+      <aside
+        id="app__aside"
+        class="dds__side-nav__wrapper"
+        data-toggle="dds__side-nav"
+      >
+        <nav class="dds__side-nav" aria-label="Main Navigation">
+          <ul class="dds__side-nav__menu" role="menu">
+            <li
+              class="dds__side-nav__item dds__side-nav__item--selected"
+              role="menuitem"
+            >
+              <a onclick="openSection('home')" href="#home">
+                <i class="dds__icon dds__icon--home" aria-hidden="true"></i>
+                <span>Home</span>
+              </a>
+            </li>
+            <li class="dds__side-nav__item" role="menuitem">
+              <a onclick="openSection('products')" href="#products">
+                <i
+                  class="dds__icon dds__icon--device-laptop"
+                  aria-hidden="true"
+                ></i>
+                <span>Products</span>
+              </a>
+            </li>
+            <li class="dds__side-nav__item" role="menuitem">
+              <a onclick="openSection('careers')" href="#careers">
+                <i
+                  class="dds__icon dds__icon--user-check"
+                  aria-hidden="true"
+                ></i>
+                <span>Careers</span>
+              </a>
+            </li>
+          </ul>
+          <div class="dds__side-nav__toggle">
+            <button type="button" aria-label="collapse">
+              <i class="dds__icon dds__icon--arrow-left" aria-hidden="true"></i>
+            </button>
+            <button type="button" aria-label="expand">
+              <i
+                class="dds__icon dds__icon--arrow-right"
+                aria-hidden="true"
+              ></i>
+            </button>
+          </div>
+        </nav>
+      </aside>
+
+      <main>
+        <div class="content-wrapper">
+          <section id="home" class="section dds__container">
+            <figure class="ornament blue">
+              <i class="dds__icon dds__icon--home" aria-hidden="true"></i>
+            </figure>
+            <h1 class="dds__h1">Home</h1>
+            <div class="dds__body-1">
+              <p>
+                A simple introduction to show you that <strong>Fett</strong> is
+                the best fit for this role.
+              </p>
+            </div>
+          </section>
+
+          <section
+            id="products"
+            class="section dds__container"
+            style="display: none"
+          >
+            <figure class="ornament red">
+              <i
+                class="dds__icon dds__icon--device-laptop"
+                aria-hidden="true"
+              ></i>
+            </figure>
+            <h1 class="dds__h1">Products</h1>
+            <div class="dds__body-1">
+              <p>
+                You'll find
+                <a href="https://codepen.io/fcfett/pens/public" target="_blank"
+                  >some fancy features here<i
+                    class="dds__icon dds__icon--pop-up-arrow-corner"
+                    aria-hidden="true"
+                  ></i></a
+                >. Sadly, I can't share all the cool things built in my
+                extensive career working for companies.
+              </p>
+              <p>
+                Anyhow, there's
+                <a href="https://fcfett.github.io/about/" target="_blank"
+                  >an interactive overview about me here<i
+                    class="dds__icon dds__icon--pop-up-arrow-corner"
+                    aria-hidden="true"
+                  ></i
+                ></a>
+                that you may find interesting.
+              </p>
+            </div>
+          </section>
+
+          <section
+            id="careers"
+            class="section dds__container"
+            style="display: none"
+          >
+            <figure class="ornament green">
+              <i
+                class="dds__icon dds__icon--user-check dds__ml-1"
+                aria-hidden="true"
+              ></i>
+            </figure>
+            <h1 class="dds__h1">Careers</h1>
+            <div class="dds__body-1">
+              <p>
+                Will you miss the chance of hire this
+                <a href="https://www.linkedin.com/in/fcfett/" target="_blank"
+                  >LinkedIn Superstar<i
+                    class="dds__icon dds__icon--pop-up-arrow-corner"
+                    aria-hidden="true"
+                  ></i></a
+                >?!
+              </p>
+
+              <button class="dds__button dds__mt-3" id="contact">
+                Hell no!
+              </button>
+
+              <!-- modal end -->
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <div
+        id="contact-modal"
+        role="dialog"
+        data-trigger="#contact"
+        data-dds="modal"
+        class="dds__modal"
+        aria-labelledby="dds__modal-title"
+      >
+        <div class="dds__modal__content">
+          <div class="dds__modal__header">
+            <h3 class="dds__modal__title" id="dds__modal-title">
+              Contact @fcfett
+            </h3>
+          </div>
+          <div class="dds__modal__body">
+            <form id="contact-form" data-dds="form-validation" novalidate="">
+              <div class="dds__input-text__container dds__mb-3">
+                <label id="contact-form-name-label" for="contact-form-name">
+                  Name
+                </label>
+                <div class="dds__input-text__wrapper">
+                  <input
+                    type="text"
+                    class="dds__input-text"
+                    placeholder="Enter Name"
+                    minlength="2"
+                    maxlength="100"
+                    name="contact-form-name"
+                    id="contact-form-name"
+                    required=""
+                    aria-labelledby="contact-form-name-label contact-form-name-helper"
+                  />
+                </div>
+              </div>
+
+              <div class="dds__input-text__container dds__mb-3">
+                <label id="contact-form-email-label" for="contact-form-email">
+                  Email
+                </label>
+                <div class="dds__input-text__wrapper">
+                  <input
+                    type="text"
+                    class="dds__input-text"
+                    placeholder="Enter Email"
+                    minlength="2"
+                    maxlength="100"
+                    name="contact-form-email"
+                    id="contact-form-email"
+                    required=""
+                    aria-labelledby="contact-form-email-label contact-form-email-helper"
+                  />
+                </div>
+              </div>
+
+              <div class="dds__input-text__container">
+                <label id="contact-form-phone-label" for="contact-form-phone">
+                  Phone Number
+                </label>
+                <div class="dds__input-text__wrapper">
+                  <input
+                    type="text"
+                    class="dds__input-text"
+                    placeholder="Enter Phone Number"
+                    minlength="2"
+                    maxlength="100"
+                    name="contact-form-phone"
+                    id="contact-form-phone"
+                    required=""
+                    aria-labelledby="contact-form-phone-label contact-form-phone-helper"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="dds__modal__footer">
+            <button
+              class="dds__button dds__button--secondary dds__button--md"
+              onclick="closeContactModal()"
+            >
+              Cancel
+            </button>
+            <button
+              class="dds__button dds__button--md"
+              onclick="submitContact()"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- dds js -->
+    <script src="https://dds.dell.com/components/2.0.7/js/index.min.js"></script>
+    <script src="./index.js"></script>
+    <script>
+      /* Initialize SideNavs */
+      [].forEach.call(
+        document.querySelectorAll('[data-toggle="dds__side-nav"]'),
+        function (element) {
+          new DDS.SideNav(element);
+        }
+      );
+
+      /* Initialize Modals */
+      [].forEach.call(
+        document.querySelectorAll('[data-dds="modal"]'),
+        function (element) {
+          new DDS.Modal(element);
+        }
+      );
+    </script>
+  </body>
+</html>
