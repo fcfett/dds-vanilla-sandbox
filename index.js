@@ -6,6 +6,7 @@ const navigationHrefs = document.querySelectorAll(`a[onclick^="openSection"`);
 const sectionIds = [...sections].map(({ id }) => id);
 
 const contactModal = document.getElementById("contact-modal");
+const contactForm = contactModal.querySelector("#contact-form");
 
 function toggleModal(modalElement, toggle) {
   if (!modalElement.Modal)
@@ -19,9 +20,29 @@ function closeContactModal() {
   toggleModal(contactModal, false);
 }
 
+function isContactFormFilled() {
+  return [...contactForm.elements].every((input) => input.value);
+}
+
 function submitContact() {
-  toggleModal(contactModal, false);
-  alert("You've made an outstanding choice!");
+  if (!isContactFormFilled()) {
+    alert("Please, fill all the fields to proceed.");
+  } else {
+    const [{ value: name }, { value: email }, { value: phone }] =
+      contactForm.elements;
+
+    alert(`
+      You've made an outstanding choice, ${name}!
+      
+      We will keep in through the given channels.
+      
+      Email: ${email}
+      Phone: ${phone}
+    `);
+
+    closeContactModal();
+    contactForm.reset();
+  }
 }
 
 function openSection(sectionName) {
