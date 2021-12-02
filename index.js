@@ -4,9 +4,19 @@ const aside = document.getElementById("app__aside");
 const sections = document.querySelectorAll(".section");
 const navigationHrefs = document.querySelectorAll(`a[onclick^="openSection"`);
 const sectionIds = [...sections].map(({ id }) => id);
-
 const contactModal = document.getElementById("contact-modal");
 const contactForm = contactModal.querySelector("#contact-form");
+const fcAlert = document.getElementById("fc-alert");
+
+function showAlert(message) {
+  const formattedMessage = message.trim().replace(/\n/g, "<br/>");
+  fcAlert.children[0].children[1].innerHTML = formattedMessage;
+  fcAlert.classList.add("visible");
+}
+
+function closeAlert() {
+  fcAlert.classList.remove("visible");
+}
 
 function toggleModal(modalElement, toggle) {
   if (!modalElement.Modal)
@@ -26,18 +36,18 @@ function isContactFormFilled() {
 
 function submitContact() {
   if (!isContactFormFilled()) {
-    alert("Please, fill all the fields to proceed.");
+    showAlert("Please, fill all the fields to proceed.");
   } else {
     const [{ value: name }, { value: email }, { value: phone }] =
       contactForm.elements;
 
-    alert(`
-      You've made an outstanding choice, ${name}!
+    showAlert(`
+      You've made an outstanding choice, <strong>${name}</strong>!
       
       We will keep in through the given channels.
       
-      Email: ${email}
-      Phone: ${phone}
+      Email: <strong>${email}</strong>
+      Phone: <strong>${phone}</strong>
     `);
 
     closeContactModal();

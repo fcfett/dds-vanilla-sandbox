@@ -69,3 +69,40 @@ strong {
 .dds__side-nav button {
   cursor: pointer;
 }
+
+#fc-alert {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.25s ease-out;
+}
+
+#fc-alert:not(.visible) {
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.25s ease-out, z-index 0s 0.25s;
+}
+
+#fc-alert .alert {
+  background-color: #fff;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 32px;
+  border-radius: 16px;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 400px;
+  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.4);
+}
+
+#fc-alert .alert button {
+  align-self: flex-end;
+}
