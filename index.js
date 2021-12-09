@@ -6,17 +6,17 @@ const navigationHrefs = document.querySelectorAll(`a[onclick^="openSection"`);
 const sectionIds = [...sections].map(({ id }) => id);
 const contactModal = document.getElementById("contact-modal");
 const contactForm = contactModal.querySelector("#contact-form");
-const fcAlert = document.getElementById("fc-alert");
-const fcAlertMessage = fcAlert.children[0].children[1];
+const ffAlert = document.getElementById("ff-alert");
+const ffAlertMessage = ffAlert.children[0].children[1];
 
 function showAlert(message) {
   const formattedMessage = message.trim().replace(/\n/g, "<br/>");
-  fcAlertMessage.innerHTML = formattedMessage;
-  fcAlert.classList.add("visible");
+  ffAlertMessage.innerHTML = formattedMessage;
+  ffAlert.classList.add("visible");
 }
 
 function closeAlert() {
-  fcAlert.classList.remove("visible");
+  ffAlert.classList.remove("visible");
 }
 
 function toggleModal(modalElement, toggle) {
